@@ -48,8 +48,8 @@ class Highlight extends AbstractSeries {
 
   onParentMouseDown(e) {
     const {onBrushStart, onDragStart} = this.props;
-    let Xlocation = e.nativeEvent.offsetX;
-    let Ylocation = e.nativeEvent.offsetY;
+    let Xlocation = isFireFox() ? e.nativeEvent.layerX : e.nativeEvent.offsetX;
+    let Ylocation = isFireFox() ? e.nativeEvent.layerY : e.nativeEvent.offsetY;
     if (e.nativeEvent.type === 'touchstart') {
       Xlocation = e.nativeEvent.pageX;
       Ylocation = e.nativeEvent.pageY;
@@ -95,6 +95,10 @@ class Highlight extends AbstractSeries {
   onParentTouchStart(e) {
     e.preventDefault();
     this.onParentMouseDown(e);
+  }
+  
+  isFirFox() {
+    return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
   }
 
   stopDrawing() {
@@ -145,8 +149,8 @@ class Highlight extends AbstractSeries {
   onParentMouseMove(e) {
     const {onBrush, onDrag} = this.props;
     const {drawing, dragging} = this.state;
-    let xLoc = e.nativeEvent.offsetX;
-    let yLoc = e.nativeEvent.offsetY;
+    let xLoc = isFireFox() ? e.nativeEvent.layerX : e.nativeEvent.offsetX;
+    let yLoc = isFireFox() ? e.nativeEvent.layerY : e.nativeEvent.offsetY;
     if (e.nativeEvent.type === 'touchmove') {
       xLoc = e.nativeEvent.pageX;
       yLoc = e.nativeEvent.pageY;
