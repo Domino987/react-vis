@@ -96,7 +96,7 @@ class Highlight extends AbstractSeries {
     e.preventDefault();
     this.onParentMouseDown(e);
   }
-  
+
   isFirFox() {
     return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
   }
