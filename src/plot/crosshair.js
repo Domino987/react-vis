@@ -36,7 +36,7 @@ function defaultTitleFormat(values) {
   if (value) {
     return {
       title: 'x',
-      value: transformValueToString(value.x)
+      value: transformValueToString(value.x),
     };
   }
 }

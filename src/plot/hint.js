@@ -72,7 +72,10 @@ const ORIENTATION = {
  */
 function defaultFormat(value) {
   return Object.keys(value).map(function getProp(key) {
-    return {title: key, value: transformValueToString(value[key])};
+    return {
+      title: key,
+      value: transformValueToString(value[key])
+    };
   });
 }
 

@@ -46,6 +46,7 @@ export function addValueToArray(arr, value) {
   return result;
 }
 
+
 /**
  * Transforms a value ( number or date ) to a string.
  * @param {Date | number} value The value as date or number.

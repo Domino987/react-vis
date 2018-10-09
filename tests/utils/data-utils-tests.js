@@ -47,6 +47,7 @@ test('data-utils #addValueToArray', t => {
   t.end();
 });
 
+
 test('data-utils #transformValueToString', t => {
   t.deepEqual(transformValueToString(0), 0,
     'Shouldn\'t transform the number value');
